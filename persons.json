@@ -1,0 +1,79 @@
+[
+    {
+        "first": "John",
+        "last": "Doe",
+        "experience": [
+            {"company": "ABC Corp", "start": "2018-01-01", "end": "2020-01-01"},
+            {"company": "XYZ Inc", "start": "2020-02-01", "end": "2022-01-01"}
+        ]
+    },
+    {
+        "first": "Jane",
+        "last": "Smith",
+        "experience": [
+            {"company": "ABC Corp", "start": "2019-06-01", "end": "2021-06-01"}
+        ]
+    },
+    {
+        "first": "Alice",
+        "last": "Johnson",
+        "experience": [
+            {"company": "XYZ Inc", "start": "2021-03-01", "end": null}
+        ]
+    },
+    {
+        "first": "Bob",
+        "last": "Brown",
+        "experience": [
+            {"company": "ABC Corp", "start": "2017-01-01", "end": "2020-01-01"},
+            {"company": "XYZ Inc", "start": "2021-01-01", "end": null}
+        ]
+    },
+    {
+        "first": "Charlie",
+        "last": "Davis",
+        "experience": [
+            {"company": "ABC Corp", "start": "2019-01-01", "end": "2019-12-31"},
+            {"company": "XYZ Inc", "start": "2021-03-01", "end": "2022-03-01"}
+        ]
+    },
+    {
+        "first": "Emily",
+        "last": "Clark",
+        "experience": [
+            {"company": "ABC Corp", "start": "2018-01-01", "end": "2019-12-31"},
+            {"company": "LMN Ltd", "start": "2020-01-01", "end": "2022-01-01"}
+        ]
+    },
+    {
+        "first": "David",
+        "last": "Evans",
+        "experience": [
+            {"company": "LMN Ltd", "start": "2020-06-01", "end": "2022-12-01"},
+            {"company": "XYZ Inc", "start": "2023-01-01", "end": null}
+        ]
+    },
+    {
+        "first": "Sophia",
+        "last": "Wilson",
+        "experience": [
+            {"company": "XYZ Inc", "start": "2020-05-01", "end": "2022-05-01"},
+            {"company": "ABC Corp", "start": "2019-05-01", "end": "2020-05-01"}
+        ]
+    },
+    {
+        "first": "Liam",
+        "last": "Martinez",
+        "experience": [
+            {"company": "LMN Ltd", "start": "2019-06-01", "end": "2021-06-01"},
+            {"company": "XYZ Inc", "start": "2022-02-01", "end": "2023-01-01"}
+        ]
+    },
+    {
+        "first": "Olivia",
+        "last": "Taylor",
+        "experience": [
+            {"company": "XYZ Inc", "start": "2021-01-01", "end": null}
+        ]
+    }
+]
