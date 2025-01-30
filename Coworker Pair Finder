@@ -1,0 +1,121 @@
+## **Coworker Pair Finder**
+
+### **Overview**
+This program processes a dataset of employees and calculates coworker pairs based on overlapping employment periods at the same company. 
+It computes a "coworker score" for each pair and outputs the top 10% of pairs by score.
+
+---
+
+### **How It Works**
+1. **Input**:
+   - A JSON file (`persons.json`) containing an array of employee records with their work histories.
+2. **Processing**:
+   - Identifies coworker pairs who have worked at the same company during overlapping periods.
+   - Calculates a coworker score:  
+     \[
+     \text{Coworker Score} = \frac{\text{Days Overlap}}{\text{Company Size}}
+     \]
+   - Marks pairs as "current" if both are still employed at the company.
+3. **Output**:
+   - Displays the top 10% of coworker pairs, sorted by score in descending order.
+
+---
+
+### **Project Structure**
+```
+project/
+│
+├── main.py           # Entry point for the program
+├── utils.py          # Contains helper functions for calculations
+├── tests/            # Folder containing all test cases
+│   ├── test_utils.py # Unit tests for utility functions
+│   ├── test_main.py  # Integration tests for the full workflow
+├── persons.json      # Sample input data file
+├── README.md         # Documentation
+└── requirements.txt  # (Optional) Dependencies for testing frameworks
+```
+
+---
+
+### **Setup and Requirements**
+
+1. **Prerequisites**:
+   - Python 3.7 or higher must be installed.
+
+2. **Optional Testing Framework**:
+   - To use `pytest` for testing, install it via:
+     ```bash
+     pip install pytest
+     ```
+
+---
+
+### **Running the Program**
+
+1. Place the `persons.json` file in the same directory as `main.py`.
+
+2. Run the script:
+   ```bash
+   python main.py
+   ```
+
+3. Expected Output:
+   - Example:
+     ```plaintext
+     Emily Clark, David Evans, LMN Ltd, 193.00
+     Bob Brown, Olivia Taylor, XYZ Inc, 183.50 (current)
+     Alice Johnson, Bob Brown, XYZ Inc, 176.12 (current)
+     Alice Johnson, Olivia Taylor, XYZ Inc, 176.12 (current)
+     Emily Clark, Liam Martinez, LMN Ltd, 172.33
+     
+     5 records printed.
+     ```
+
+---
+
+### **Testing the Program**
+
+1. **Run All Tests**:
+   - To execute all unit and integration tests, run:
+     ```bash
+     python -m unittest discover tests
+     ```
+
+2. **Expected Test Results**:
+   - All tests should pass, confirming the correctness of overlap calculations, score computations, and end-to-end functionality.
+
+---
+
+### **Input File Format**
+The input file (`persons.json`) should contain an array of employee records. Each record includes:
+- `first`: First name of the employee.
+- `last`: Last name of the employee.
+- `experience`: A list of jobs with:
+  - `company`: The company name.
+  - `start`: ISO 8601 start date of employment (e.g., `"2020-01-01"`).
+  - `end`: ISO 8601 end date of employment or `null` for ongoing employment.
+
+#### **Example**
+```json
+[
+    {
+        "first": "John",
+        "last": "Doe",
+        "experience": [
+            {"company": "ABC Corp", "start": "2018-01-01", "end": "2020-01-01"},
+            {"company": "XYZ Inc", "start": "2020-02-01", "end": "2022-01-01"}
+        ]
+    }
+]
+```
+
+---
+
+### **Performance Notes**
+- **Efficiency**:
+  - Grouping by company minimizes unnecessary comparisons.
+  - Scales well for datasets with 100k+ records.
+- **Testing**:
+  - Verified against edge cases like:
+    - Employees with no overlaps.
+    - Employees with ongoing employment.
